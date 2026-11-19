@@ -1,0 +1,38 @@
+services:
+  - type: web
+    name: prophecyverse-moviebox-provider
+    runtime: node
+    plan: free
+    buildCommand: npm ci && npm run build
+    startCommand: npm start
+    healthCheckPath: /health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DEFAULT_STREAM_DELIVERY
+        value: proxy
+      - key: PROXY_TOKEN_TTL_SECONDS
+        value: "900"
+      - key: PROXY_TOKEN_SECRET
+        generateValue: true
+      - key: ADMIN_SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: PUBLIC_BASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+      - key: MOVIEBOX_AUTH_TOKEN
+        sync: false
+      - key: MOVIEBOX_SIGNING_SECRET
+        sync: false
+      - key: MOVIEBOX_API_HOSTS
+        sync: false
+      - key: MOVIEBOX_MEDIA_HOSTS
+        sync: false
+      - key: MOVIEBOX_STREAM_REFERER
+        sync: false

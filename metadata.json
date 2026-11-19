@@ -1,0 +1,6 @@
+{
+  "name": "ProphecyVerse MovieBox Provider",
+  "description": "Standalone MovieBox provider API server with unified search, details, episodes, and signed stream proxy plus Admin Management Dashboard.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
